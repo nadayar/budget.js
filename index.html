@@ -33,10 +33,10 @@
     </style>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     <script type="text/javascript" src="lib/ember-0.9.3.js"></script>
+    <script type="text/javascript" src="lib/app.js"></script>
     
     <script type="text/javascript">
-      App = SC.Application.create();
-      
+      App = SC.Application.create();      
     </script>
 
 
@@ -54,7 +54,7 @@
         </p>
         
         
-        {{#view SC.Button classBinding="isActive"
+        {{#view SC.Button classBinding="isActive"}}
             Am I making enough?
         {{/view}}
         
