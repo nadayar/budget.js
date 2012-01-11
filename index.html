@@ -34,10 +34,6 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     <script type="text/javascript" src="lib/ember-0.9.3.js"></script>
     <script type="text/javascript" src="lib/app.js"></script>
-    
-    <script type="text/javascript">
-      App = SC.Application.create();      
-    </script>
 
 
   </head>
@@ -46,7 +42,7 @@
       <div class="editor">
         <div class="invite">Budget.js rocks!!!</div>
         <p>
-            Enter Income: {{view SC.TextField }}
+            Enter Income: {{view SC.TextField valueBinding="BudgetJs.Budget.income" }}
         </p>
         
         <p>
