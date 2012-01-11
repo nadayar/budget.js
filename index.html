@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Bindings</title>
+    <style>
+      body {
+        background: url(images/ricepaper2.png);
+        font-family: Helvetica, Arial, "sans-serif";
+      }
+
+      body > div > div {
+        background-color: #fff;
+        -webkit-border-radius: 6px;
+        box-shadow: rgba(0,0,0,0.3) 0px 0px 2px;
+
+        margin: 0 auto 35px auto;
+        padding: 15px;
+        width: 600px;
+      }
+
+      .invite {
+        font-family: "Zapfino";
+      }
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script type="text/javascript" src="lib/ember-0.9.3.js"></script>
+    <script type="text/javascript">
+      App = SC.Application.create();
+      
+      App.personController = SC.Object.create({
+        firstName: 'Alan',
+        lastName: 'Turing',
+
+        fullName: function() {
+          return this.get('firstName') + ' ' + this.get('lastName');
+        }.property('firstName', 'lastName'),
+        
+        mrpresident: function() {
+            this.set('firstName', 'Barak');
+            this.set('lastName', 'Obama');
+            
+        },
+
+        didRSVP: false
+      });
+    </script>
+
+
+  </head>
+  <body>
+    <script type="text/x-handlebars">
+      <div class="editor">
+        <div class="invite">Budget.js rocks!!!</div>
+        <p>
+            Enter Income: {{view SC.TextField }}
+        </p>
+        
+        <p>
+            Profit!!! {{view SC.TextField }}
+        </p>
+        
+        
+        {{#view SC.Button classBinding="isActive"
+              target="App.personController"
+              action="mrpresident"}}
+            Am I making enough?
+        {{/view}}
+        
+      </div>
+    </script>
+  </body>
+</html>
+
