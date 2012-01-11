@@ -46,7 +46,7 @@
         </p>
         
         <p>
-            Profit!!! {{view SC.TextField }}
+            Profit!!! {{view SC.TextField valueBinding="BudgetJs.Budget.profit" }}
         </p>
         
         
@@ -56,6 +56,12 @@
         
         {{#view SC.Button classBinding="isActive"}}
             Am I making enough?
+        {{#view BudgetJs.IsItEnough}}
+          {{#if isEnough }}
+            yes, it is enough. be content.
+          {{else}}
+            no, it is not enough, please go inquire about more cheddar.
+          {{/if}}
         {{/view}}
         
       </div>
