@@ -50,6 +50,12 @@
         </p>
         
         
+        {{#view Em.TextField valueBinding="BudgetJs.expenseCreateController.cost" placeholder="cost"}}{{/view}}
+        {{#view Em.TextField valueBinding="BudgetJs.expenseCreateController.description" placeholder="description"}}{{/view}}
+        {{#view Em.TextField valueBinding="BudgetJs.expenseCreateController.tag" placeholder="tag"}}{{/view}}
+        
+        {{#view SC.Button classBinding="isActive"}}
+            Am I making enough?
         {{#view BudgetJs.IsItEnough}}
           {{#if isEnough }}
             yes, it is enough. be content.
