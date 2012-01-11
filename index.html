@@ -33,25 +33,10 @@
     </style>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     <script type="text/javascript" src="lib/ember-0.9.3.js"></script>
+    
     <script type="text/javascript">
       App = SC.Application.create();
       
-      App.personController = SC.Object.create({
-        firstName: 'Alan',
-        lastName: 'Turing',
-
-        fullName: function() {
-          return this.get('firstName') + ' ' + this.get('lastName');
-        }.property('firstName', 'lastName'),
-        
-        mrpresident: function() {
-            this.set('firstName', 'Barak');
-            this.set('lastName', 'Obama');
-            
-        },
-
-        didRSVP: false
-      });
     </script>
 
 
@@ -70,8 +55,6 @@
         
         
         {{#view SC.Button classBinding="isActive"
-              target="App.personController"
-              action="mrpresident"}}
             Am I making enough?
         {{/view}}
         
